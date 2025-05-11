@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%; /* Ensure both html and body take full height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d3dde6; /* Background color for the whole page */
+}
+
+.card{
+    background-color: #ffffff;
+    border: 1px #a4a4a4 solid;
+    border-radius: 5px;
+    padding: 10px;
+}

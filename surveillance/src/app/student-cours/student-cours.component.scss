@@ -1,0 +1,127 @@
+// .btm-border{
+//     padding: 10px;
+//     border-bottom: 1px solid gray;
+// }
+// .btm-border ul{
+//   list-style: none; 
+//   text-decoration: none;
+// }
+.container{
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.card-nopad{
+    background-color: #ffffff;
+    border: 1px #d1d1d1 solid;
+    border-radius: 5px;
+}
+.mat-list{
+    width: 25%;
+}
+.mat-list h2,
+.mat-list li 
+{
+    padding: 10px;
+    border-bottom: 1px solid #d1d1d1;
+    list-style: none;
+    // text-align: center;
+}
+.mat-names{
+    width: 50%;
+    height: 100%;
+}
+.mat-names table{
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.mat-names thead{
+    background-color: #a5b7bd;
+}
+.mat-names th,
+.mat-names td{
+    width: 50%;
+    padding: 10px;
+    // border: 1px solid gray;
+}
+.mat-names td{
+    // border: 1px solid gray;
+    // width: 50%;
+    border-bottom: 1px solid #d1d1d1;
+}
+.mat-names th:not(:last-child),
+.mat-names td:not(:last-child) {
+  border-right: 1px solid #d1d1d1;
+}
+.add-icon li{
+    display: flex;
+    justify-content: space-between;
+}
+.add-icon i{
+    color: green;
+    font-size: 20px;
+    cursor: pointer;
+}
+.popup {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+/* Full-screen gray background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Centered popup content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.center-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.red{
+    background-color:  #e53935;
+    color: white;
+}
+
+/* Close button */
+.popup-content button{
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+
+

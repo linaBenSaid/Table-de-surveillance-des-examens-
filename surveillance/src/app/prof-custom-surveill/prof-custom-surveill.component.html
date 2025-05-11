@@ -1,0 +1,82 @@
+<div class="card" style="margin-bottom: 20px;">
+    <h2>
+        Calendrier de surveillance des examens
+    </h2>   
+</div>
+
+<div class="centered">
+    <div class="calendar-overlay">
+    <div class="calendar">
+        <div 
+        *ngFor="let day of days" 
+        class="calendar-day" 
+        [ngClass]="{'highlight': checkCondition(day)}"
+        (mouseenter)="showTooltip(day, $event)"
+        (mouseleave)="hideTooltip()"
+        (click)="onHighlightClick(day, $event)"
+        >
+        <span class="day">{{ day }}</span>
+        <p *ngIf="checkCondition(day)">Exam</p>
+        </div>
+    </div>
+    
+    <!-- Tooltip -->
+    <!-- Tooltip (Only appears for special days) -->
+    <div *ngIf="tooltipVisible" class="tooltip" [ngStyle]="{'top.px': tooltipY, 'left.px': tooltipX}">
+        <!-- <p>Exam Time: {{ getTimeForDay(tooltipDay) }}</p> -->
+        <p>Exam Time: </p>
+        <p style="white-space: pre-line">{{ getTimeForDayMultiline(tooltipDay) }}</p>
+        <i class='bx bx-help-circle'></i>Cliquer pour ouvrir
+    </div> 
+    </div>
+    <!-- <div class="info-overlay">
+        <div class="info-bloc">
+            <h2>
+                <i class='bx bxs-hourglass-bottom'></i>
+                Demande en cours
+            </h2>
+            <ul *ngFor="let updated of examUpdAccList.updated">
+                 <li>{{updated.oldDate}} {{updated.newDate}} {{updated.newTime}}</li>
+            </ul>
+        </div>
+        <div class="info-bloc">
+            <h2>
+                <i class='bx bx-calendar-check' ></i>
+                Demande Accepté
+            </h2>
+            <ul *ngFor="let accepted of examUpdAccList.accepted">
+                <li>{{accepted.oldDate}} {{accepted.newDate}} {{accepted.newTime}}</li>
+            </ul>
+        </div>
+    </div> -->
+    <!-- Full-screen Popup -->
+        <div class="popup-overlay" *ngIf="popupVisible">
+            <div class="popup-content">
+                <h2>Exam Details</h2>
+                <!-- <p>Exam scheduled for <strong>{{ selectedDay }}</strong></p> -->
+                <p style="margin-top: 10px;">Exam scheduled for <strong>{{ selectedDay }}</strong></p>
+                <!-- Iterate over multiple times -->
+                    <p *ngFor="let time of selectedDayInfo">
+                        <strong>Time:</strong> {{ time }}
+                    </p>
+                    <div style="white-space: pre-line; margin-top: 10px;">
+                        {{getTimeForDayMultiline(tooltipDay)}}
+                    </div>
+                    <button (click)="closePopup()" class="close">Close</button>
+                    <button [disabled]="updatePendingCheck()" (click)="openChangeForm()" class="change">Changer</button>
+                    <!-- Time change form -->
+                     <div *ngIf="timeChangeForm" class="time-form">
+                            <!-- Simple Date & Time Form -->
+                            <input type="date" #dateVar>
+                            <!-- <input type="time"> -->
+                            <select #optionVar>
+                                <option value="" disabled selected>Select a time</option>
+                                <option *ngFor="let time of timeOptions" [value]="time">{{ time }}</option>
+                            </select>
+                            <i class='bx bx-help-circle'> Tout le jour sera remplacé</i>
+                            <button class="change" (click)="changeExamDate(dateVar.value,optionVar.value)">Envoyer</button>
+                     </div>
+            </div>
+        </div>
+</div>
+

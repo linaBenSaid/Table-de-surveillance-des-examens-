@@ -1,0 +1,98 @@
+a.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+.news-card{
+    background-color: #ffffff;
+    border: 1px #a4a4a4 solid;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.date{
+    width: 60px;
+    // height: 60px;
+    display: flex;
+    flex-direction: column;
+    // text-align: center;
+    align-items: center;
+}
+.month, .day {
+    width: 100%;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+}
+.month{
+background-color: #7696b0;
+height: 30px;
+color: white;
+}
+.day{
+background-color: #e5e9ec;
+height: 35px;
+}
+.content{
+    // background-color: aquamarine;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.content .title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.content a {
+    text-decoration:none;
+    color: inherit;
+}
+.content .time{
+    font-size: 15px;
+    color: gray;
+}
+.pagination-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.pagination-controls span{
+    font-family: monospace;
+    font-size: large;
+    font-weight: 600;
+    color: #2b3435;
+}
+.pagination-controls button{
+    padding: 8px 20px;
+    background-color: #dde9e9;
+    border: none;
+    color: #2b3435;
+    font-family: monospace;
+    font-size: large;
+    border-radius: 10px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    cursor: pointer;
+}
+.pagination-controls button:hover{
+    background-color: #72818b;
+    color: white;
+}
+.pagination-controls button:disabled{
+    background-color: #d0d0d0;
+    color: #828282;
+    cursor:default;
+
+}
+
+

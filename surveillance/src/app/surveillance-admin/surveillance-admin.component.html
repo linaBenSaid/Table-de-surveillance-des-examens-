@@ -1,0 +1,46 @@
+<div class="card">
+    <h2>
+        Calendrier des Examens
+    </h2>   
+</div>
+
+
+<div style="margin-top: 20px;">
+    <div class="card-nopad mat-list">
+        <h2 class="btm-border">Calendrier de surveillance des professeurs</h2>
+        <!-- <ul class="btm-border">
+            <li>Ajouter fichier enseignants<i class='bx bx-plus-circle'></i></li>
+            <li>Ajouter fichier des salles<i class='bx bx-plus-circle'></i></li>
+            <li>Ajouter fichier 3<i class='bx bx-plus-circle'></i></li>
+        </ul> -->
+    </div>
+</div>
+
+<button class="green" [disabled]="fileExists" (click)="openPopup()">Générer Calendrier de surveillance</button>
+<button class="red"  [disabled]="!fileExists" (click)="deleteFilesFromFolder()">Supprimer Calendrier</button>
+<br>
+<div *ngIf="fileExists">
+    <button class="green" (click)="downloadExcelFile()">Télécharger le planning</button>
+</div>
+<!-- Full-screen Popup -->
+<div class="popup-overlay" *ngIf="popupVisible">
+    <div class="popup-content">
+        <!-- add loading here -->
+        <p>loading !</p>
+
+        <!-- <label for="fileInput">Ajouter un fichier pour la matière <b>Algorithmique</b> pour la classe <b>ING A2</b></label>
+        <input type="file" id="fileInput" name="file">
+        <div class="card-nopad mat-list">
+            <ul class="btm-border">
+                <li>Ajouter fichier enseignants<i class='bx bx-plus-circle'></i></li>
+                <li>Ajouter fichier des salles<i class='bx bx-plus-circle'></i></li>
+                <li>Ajouter fichier 3<i class='bx bx-plus-circle'></i></li>
+            </ul>
+        </div>
+        <div class="center-container">
+            <button (click)="closePopup()" class="red">Confirmer</button>
+            <button (click)="closePopup()" class="close black-txt">Quitter</button>
+        </div> -->
+        
+    </div>
+</div>

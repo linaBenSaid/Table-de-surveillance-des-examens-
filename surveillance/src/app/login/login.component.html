@@ -1,0 +1,25 @@
+<div class="logo">
+    <img src="assets/logo.png" alt="">
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card card-style">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Username</label>
+                        <input #username type="text" name="username" class="form-control" id="id_username" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="id_password" class="form-label">Password</label>
+                        <input #password type="password" name="password" class="form-control" id="id_password" required>
+                    </div>
+                    <div class="field btn-center">
+                        <button type="button" class="btn-log" (click)="login(username.value,password.value)">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

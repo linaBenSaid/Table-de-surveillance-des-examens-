@@ -1,0 +1,69 @@
+<div class="card" style="margin-bottom: 25px;">
+    <h2>
+        Actualités
+    </h2>
+</div>
+<a *ngIf="storedUsername === 'admin'" class="button-link"  [routerLink]="['/admin/news']" >Créer actualités</a>
+<div *ngFor="let news of newsList">
+    <div class="news-card">
+    <div class="date" >
+        <span class="month">
+            {{ news.dateCreation | date:'MMM' }}
+        </span>
+        <span class="day">
+            {{news.dateCreation | date:'dd' }}
+        </span>
+    </div>
+    <div class="content">
+        <a class="title"  [routerLink]="['/news', news.id]" routerLinkActive="active">
+            {{news.title}}
+        </a>
+        <span class="time">
+            {{ news.dateCreation | date:'HH:mm' }}
+        </span>
+    </div>
+</div>
+</div>
+<!-- Pagination controls -->
+<div class="pagination-controls">
+    <button (click)="loadNews(currentPage - 1)" [disabled]="currentPage === 1"> <b><</b> Previous</button>
+    <span>Page {{currentPage}} / {{totalPages-1}}</span>
+    <button (click)="loadNews(currentPage + 1)" [disabled]="currentPage + 1 >= totalPages">Next <b>></b></button>
+  </div>
+
+<!-- <div class="news-card">
+    <div class="date">
+        <span class="month">
+            MAR
+        </span>
+        <span class="day">
+            25
+        </span>
+    </div>
+    <div class="content">
+        <span class="title">
+            Title here
+        </span>
+        <span class="time">
+            06:10
+        </span>
+    </div>
+</div>
+<div class="news-card">
+    <div class="date">
+        <span class="month">
+            MAR
+        </span>
+        <span class="day">
+            25
+        </span>
+    </div>
+    <div class="content">
+        <span class="title">
+            Title here
+        </span>
+        <span class="time">
+            06:10
+        </span>
+    </div> -->
+<!-- </div> -->

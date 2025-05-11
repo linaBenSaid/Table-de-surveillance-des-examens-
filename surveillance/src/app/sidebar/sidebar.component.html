@@ -1,0 +1,80 @@
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <nav *ngIf="showSidebar"
+  [ngClass]="['sidebar', toggle ? '' : 'closed']">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="assets/logo.png" alt="">
+            </span>
+        </div>
+        <i class='bx bx-chevron-right toggle' (click)="toggleClass()"></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+        <ul class="menu-links">
+            <li class="nav-link">
+                <a [routerLink]= "['/news']" routerLinkActive="active">
+                    <i class='bx bx-home icon'></i> 
+                    <span class="text nav-text">Actualités</span>
+                </a>
+            </li>
+            <!-- <li class="nav-link">
+                <a [routerLink]= "['/student/timeTable']" routerLinkActive="active">
+                    <i class='bx bxs-calendar icon'></i>
+                    <span class="text nav-text">Emploi de temps</span>
+                </a>
+            </li> -->
+            <!-- <li class="nav-link">
+                <a [routerLink]= "['/student/cours']" routerLinkActive="active">
+                    <i class='bx bx-book-open icon'></i>
+                    <span class="text nav-text">Supports de cours</span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a [routerLink]= "['/teacher/cours']" routerLinkActive="active">
+                    <i class='bx bx-book-open icon'></i>
+                    <span class="text nav-text">Supports de cours</span>
+                </a>
+            </li> -->
+            <!-- <li class="nav-link">
+                <a [routerLink]= "['/admin/surveillance']" routerLinkActive="active">
+                    <i class='bx bxs-calendar icon'></i>
+                    <span class="text nav-text">Calendrier d'examens</span>
+                </a>
+            </li> -->
+            <li class="nav-link" *ngIf="!isAdmin">
+                <a [routerLink]= "['/teacher/custom-surveillance']" routerLinkActive="active">
+                    <i class='bx bxs-user-check icon'></i>
+                    <span class="text nav-text">Surveillance examens</span>
+                </a>
+            </li>
+            <li class="nav-link" *ngIf="isAdmin">
+                <a [routerLink]= "['/admin/surveillance']" routerLinkActive="active">
+                    <i class='bx bxs-user-check icon'></i>
+                    <span class="text nav-text">Admin Surveillance</span>
+                </a>
+            </li>
+        </ul>
+        </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a [routerLink]= "['/login']">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+    </div>
+
+    
+</nav>  
+<!-- <section class="home" > -->
+<section [ngClass]="[showSidebar ? 'home' : '']" >
+    <router-outlet />
+</section>
+</body>
+

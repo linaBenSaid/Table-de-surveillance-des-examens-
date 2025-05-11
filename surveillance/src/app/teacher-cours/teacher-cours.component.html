@@ -1,0 +1,52 @@
+<div class="card">
+    <h2>
+        Support de cours 
+    </h2>   
+</div>
+<div class="container">
+    <div class="card-nopad mat-list">
+        <h2 class="btm-border">Liste des classes</h2>
+        <ul class="btm-border add-icon">
+            <li>ING A1 - algorithmique <i class='bx bx-plus-circle' (click)="openPopup()"></i></li>
+            <li>LSI A2 - algorithmique <i class='bx bx-plus-circle' (click)="openPopup()"></i></li>
+            <li>LISI - base données <i class='bx bx-plus-circle' (click)="openPopup()"></i></li>
+        </ul>
+    </div>
+
+    <div class="card-nopad mat-names">
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Date publication</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Intro00</td>
+                    <td>Oct 1 2024</td>
+                </tr>
+                <tr>
+                    <td>Intro00</td>
+                    <td>Oct 1 2024</td>
+                </tr>
+                <tr>
+                    <td>Intro00</td>
+                    <td>Oct 1 2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Full-screen Popup -->
+<div class="popup-overlay" *ngIf="popupVisible">
+    <div class="popup-content">
+        <label for="fileInput">Ajouter un fichier pour la matière <b>Algorithmique</b> pour la classe <b>ING A2</b></label>
+        <input type="file" id="fileInput" name="file">
+        <div class="center-container">
+            <button (click)="closePopup()" class="red">Confirmer</button>
+            <button (click)="closePopup()" class="close">Quitter</button>
+        </div>
+        
+    </div>
+</div>

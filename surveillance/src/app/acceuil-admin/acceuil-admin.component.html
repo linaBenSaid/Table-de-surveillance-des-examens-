@@ -1,0 +1,25 @@
+<!-- ajout de texte et de fichier -->
+<div class="card" style="margin-bottom: 30px;">
+    <h2>
+        Créer une actualité
+    </h2>   
+</div>
+
+<div class="wrapper">
+    <div>
+        <div class="card">
+            <h2>
+                Titre de l'actualité
+            </h2>   
+            <input type="text" #title>
+            </div>
+        <div class="card">
+            <h2>
+                Contenu
+            </h2>   
+            <textarea #content name="content" cols="50" rows="5" id="" style="resize: none;"></textarea>
+            <input type="file" (change)="onFileChange($event)" />
+        </div>
+    </div> 
+        <button class="green" (click)="createNews(title.value,content.value)">Créer l'actualité</button>   
+</div>
