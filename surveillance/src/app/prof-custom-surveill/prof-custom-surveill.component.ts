@@ -130,8 +130,8 @@ timeOptions: string[] = ['08:00','09:00', '10:00','11:00', '12:00', '13:00', '14
   
 
   loadExamTableByProfId(profId:string){
-    // this.httpClient.get<examTime>(`http://127.0.0.1:8000/surveillances/Enseignant%20${profId}/`)
-    this.httpClient.get<examTime>(`http://127.0.0.1:8000/surveillances/Enseignant%20276/`)
+    // this.httpClient.get<examTime>(`http://127.0.0.1:8000/surveillances/Enseignant%20276/`)
+    this.httpClient.get<examTime>(`http://localhost:8080/excel/timeTable/Enseignant 20`)
     .subscribe({
       next: (res) =>{
         this.examTimeObject = res
